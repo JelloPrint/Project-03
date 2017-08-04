@@ -88,7 +88,7 @@ export default class Ball {
     ball.setAttributeNS(null, 'r', this.radius);
     ball.setAttributeNS(null, 'cx', this.x);
     ball.setAttributeNS(null, 'cy', this.y);
-    ball.setAttributeNS(null, 'fill', '#FFFFFF');
+    ball.setAttributeNS(null, 'fill', '#000000');
     svg.appendChild(ball);
   }
 

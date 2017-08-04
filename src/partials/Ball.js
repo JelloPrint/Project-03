@@ -7,7 +7,8 @@ export default class Ball {
     this.boardHeight = boardHeight;
     this.direction = 1;
     this.ping = new Audio('public/sounds/pong-01.wav');
-    this.goalPing = new Audio('public/sounds/pong-04.wav')
+    this.goalPlayer1 = new Audio('public/sounds/blueteamscore.mp3');
+    this.goalPlayer2 = new Audio('public/sounds/redteamscore.mp3');
     this.reset();
   }
 
@@ -32,11 +33,11 @@ export default class Ball {
     if(hitLeft) {
       this.goal(player2);
       this.direction = -1;
-      this.goalPing.play();
+      this.goalPlayer2.play();
 
     } else if (hitRight) {
       this.goal(player1);
-      this.goalPing.play();
+      this.goalPlayer1.play();
 
     } else if (hitTop || hitBottom) {
       this.vy = -this.vy;

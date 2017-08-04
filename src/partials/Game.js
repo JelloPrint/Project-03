@@ -18,14 +18,15 @@ export default class Game {
 
 
 		this.board = new Board(this.width, this.height);
-		this.player1 = new Paddle(
+		this.player1 = new Paddle (
 			this.height,
 			this.paddleWidth,
 			this.paddleHeight,
 			this.boardGap,
 			(this.height - this.paddleHeight) / 2,
 			KEYS.a,
-			KEYS.z
+			KEYS.z,
+			'blue'
 		);
 
 		this.player2 = new Paddle (
@@ -35,7 +36,8 @@ export default class Game {
 			this.width - this.boardGap - this.paddleWidth,
 			(this.height - this.paddleHeight) / 2,
 			KEYS.up,
-			KEYS.down
+			KEYS.down,
+			'red'
 		);
 
 		this.ball = new Ball (

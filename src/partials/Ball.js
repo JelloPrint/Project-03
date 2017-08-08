@@ -9,6 +9,7 @@ export default class Ball {
     this.ping = new Audio('public/sounds/pong-01.wav');
     this.goalPlayer1 = new Audio('public/sounds/blueteamscore.mp3');
     this.goalPlayer2 = new Audio('public/sounds/redteamscore.mp3');
+    this.gameOver = new Audio('public/sounds/gameover.mp3');
     this.reset();
   }
 
@@ -32,17 +33,20 @@ export default class Ball {
 
     if(hitLeft) {
       this.goal(player2);
+      player1.height += 2.5;
       this.direction = -1;
       this.goalPlayer2.play();
 
     } else if (hitRight) {
       this.goal(player1);
+      player2.height += 2.5;
       this.goalPlayer1.play();
 
     } else if (hitTop || hitBottom) {
       this.vy = -this.vy;
     }
   }
+
   paddleCollision(player1, player2) {
     if (this.vx > 0) {
 
@@ -74,7 +78,9 @@ export default class Ball {
   }
   goal(player) {
     player.score++;
+    player.height -= 5;
     this.reset();
+
   }
 
   render(svg, player1, player2) {

@@ -26,7 +26,8 @@ export default class Game {
 			(this.height - this.paddleHeight) / 2,
 			KEYS.a,
 			KEYS.z,
-			'blue'
+			'blue',
+			// this.score
 		);
 
 		this.player2 = new Paddle (
@@ -37,7 +38,8 @@ export default class Game {
 			(this.height - this.paddleHeight) / 2,
 			KEYS.up,
 			KEYS.down,
-			'red'
+			'red',
+			// this.score
 		);
 
 		this.ball = new Ball (
@@ -62,7 +64,33 @@ export default class Game {
 					break;
 			}
 		});
+
+		document.addEventListener('keydown', event => {
+			switch (event.key) {
+				case KEYS.r:
+					location.reload();
+					break;
+			}
+		});
 	}
+
+// 	Working on creating alert when one player's score reaches 5 points
+//
+//	 victory(player1, player2) {
+//       const blueVictory = this.score(player1) = 5;
+//       const redVictory = this.score(player2) = 5;
+
+//       if(blueVictory) {
+//         !this.pause;
+//         window.alert("Blue Player Wins! Please press 'r' to restart");
+//         this.gameOver.play();
+
+//     } else if (redVictory) {
+//        !this.pause;
+//         window.alert("Red Player Wins! Please press 'r' to restart");
+//         this.gameOver.play();
+//     }
+//   }
 
 	render() {
 

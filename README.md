@@ -25,3 +25,7 @@ A basic pong game using SVGs.
 **Player 2:**
 * ▲ : up
 * ▼: down
+
+**General:** 
+* p: pause game
+* spacebar: restart game

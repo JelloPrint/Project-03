@@ -74,7 +74,7 @@ export default class Game {
 		});
 	}
 
-// 	Working on creating alert when one player's score reaches 5 points
+// 	Working on creating alert when one player's score reaches 5 points as well play sound effect
 //
 //	 victory(player1, player2) {
 //       const blueVictory = this.score(player1) = 5;
